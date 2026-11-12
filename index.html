@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#17181C">
+<title>Artists Roommate — Works in Progress</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10.3' fill='none' stroke='%23E8A33D' stroke-width='3.4'/%3E%3Ccircle cx='12' cy='12' r='3.6' fill='%23E8A33D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- SVG SPRITE (bold strokes only) -->
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+
+<!-- Logo: bold circle with a dot inside. The ring touches all four edges of its box,
+     so the box height is exactly the visible height of the mark. -->
+<g id="icon-mark">
+  <circle cx="12" cy="12" r="10.3" fill="none" stroke="currentColor" stroke-width="3.4"/>
+  <circle cx="12" cy="12" r="3.6" fill="currentColor"/>
+</g>
+
+<g id="icon-crop"><path d="M7 2v15a1 1 0 0 0 1 1h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M2 7h15a1 1 0 0 1 1 1v14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+
+<g id="icon-expand"><path d="M4 9V4h5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 9V4h-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M4 15v5h5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 15v5h-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+
+<g id="icon-vault"><path d="M3 10h18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 10l1-5h16l1 5" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" fill="none"/><path d="M4 10v9h16v-9" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" fill="none"/><circle cx="12" cy="15" r="2.1" stroke="currentColor" stroke-width="2.4" fill="none"/></g>
+
+<g id="icon-lyrics"><path d="M6 3h9l4 4v14H6z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/><path d="M15 3v4h4" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/><line x1="9" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><line x1="9" y1="15.5" x2="16" y2="15.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><line x1="9" y1="19" x2="13" y2="19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></g>
+
+<g id="icon-beat"><path d="M9 18V5l11-2v13" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/><circle cx="6.5" cy="18" r="2.7" stroke="currentColor" stroke-width="2.4" fill="none"/><circle cx="17.5" cy="16" r="2.7" stroke="currentColor" stroke-width="2.4" fill="none"/></g>
+
+<g id="icon-image"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="9" cy="10" r="1.8" stroke="currentColor" stroke-width="2.3" fill="none"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" fill="none"/></g>
+
+<g id="icon-idea"><path d="M9 18h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M10 21h4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M12 3a6.5 6.5 0 0 0-3.6 11.9c.6.4 1 1.1 1.1 1.9v.4h5v-.4c0-.8.5-1.5 1.1-1.9A6.5 6.5 0 0 0 12 3Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" fill="none"/></g>
+
+<g id="icon-trash"><path d="M4 7h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M9 7V4.5h6V7" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/><path d="M6 7l1 13h10l1-13" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/><line x1="10" y1="11" x2="10" y2="17" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><line x1="14" y1="11" x2="14" y2="17" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></g>
+
+<g id="icon-search"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2.5" fill="none"/><line x1="15.3" y1="15.3" x2="20" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></g>
+
+<g id="icon-plus"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></g>
+
+<g id="icon-back"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+
+<g id="icon-close"><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/></g>
+
+<g id="icon-menu"><line x1="4" y1="6.5" x2="20" y2="6.5" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><line x1="4" y1="17.5" x2="14" y2="17.5" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/></g>
+
+<g id="icon-history"><path d="M3 12a9 9 0 1 0 3-6.7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M3 4v4.5H7.5" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/><path d="M12 8v4.5l3 2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+
+<g id="icon-download"><path d="M12 4v11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 11L12 15.5 16.5 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M4 19h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></g>
+
+<g id="icon-upload"><path d="M12 16V5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 9L12 4.5 16.5 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M4 19h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></g>
+
+<g id="icon-warn"><path d="M12 4.5 21 19.5H3Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" fill="none"/><line x1="12" y1="10" x2="12" y2="14.3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="17" r="0.6" stroke="currentColor" stroke-width="2.4"/></g>
+
+<g id="icon-check"><path d="M4.5 12.5l5 5 10-11" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+
+<g id="icon-empty"><path d="M12 3v6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7 6.5 12 9l5-2.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="5" y="9" width="14" height="11" rx="1.4" stroke="currentColor" stroke-width="2.4" fill="none"/><line x1="9" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></g>
+
+<g id="icon-play"><path d="M7 4.5v15l13-7.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="currentColor"/></g>
+
+<g id="icon-pause"><rect x="6.5" y="4.5" width="4.5" height="15" rx="1" fill="currentColor"/><rect x="13" y="4.5" width="4.5" height="15" rx="1" fill="currentColor"/></g>
+
+<g id="icon-audio"><path d="M4 14v-4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M8 17v-10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M12 19.5v-15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M16 16v-8" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M20 13v-2" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></g>
+
+<g id="icon-loop"><path d="M4 11V9a3 3 0 0 1 3-3h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M16 3l3 3-3 3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 13v2a3 3 0 0 1-3 3H5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M8 21l-3-3 3-3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+
+</defs>
+</svg>
+
+<!-- Hidden file inputs (always in the page so the picker never depends on re-rendered markup) -->
+<input type="file" id="audioFileInput" class="vh-input" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.oga,.opus,.flac,.webm,.aif,.aiff" tabindex="-1">
+<input type="file" id="coverFileInput" class="vh-input" accept="image/*" tabindex="-1">
+
+<audio id="audioEl" preload="metadata"></audio>
+
+<div class="app" id="app">
+
+  <div class="scrim" id="scrim"></div>
+
+  <!-- SIDEBAR / DRAWER -->
+  
+  <aside class="rail" id="rail" aria-label="Library">
+    <div class="rail-top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false"><use href="#icon-mark"/></svg>
+        </span>
+        <div class="brand-text">
+          <div class="brand-name">Artists Roommate</div>
+          <div class="brand-sub">work in progress, kept safe</div>
+        </div>
+      </div>
+      <button class="btn-icon rail-close" id="railClose" type="button" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+
+    <nav class="nav-group" id="navGroup">
+      <button class="nav-item active" type="button" data-filter="all">
+        <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-vault"/></svg>
+        All works <span class="count" data-count="all">0</span>
+      </button>
+      <button class="nav-item" type="button" data-filter="song">
+        <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-lyrics"/></svg>
+        Lyrics <span class="count" data-count="song">0</span>
+      </button>
+      <button class="nav-item" type="button" data-filter="beat">
+        <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-beat"/></svg>
+        Beats <span class="count" data-count="beat">0</span>
+      </button>
+      <button class="nav-item" type="button" data-filter="cover">
+        <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-image"/></svg>
+        Cover art <span class="count" data-count="cover">0</span>
+      </button>
+      <button class="nav-item" type="button" data-filter="idea">
+        <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-idea"/></svg>
+        Ideas <span class="count" data-count="idea">0</span>
+      </button>
+      <button class="nav-item" type="button" data-filter="trash">
+        <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-trash"/></svg>
+        Trash <span class="count" data-count="trash">0</span>
+      </button>
+    </nav>
+
+    <div class="rail-foot">
+      <button class="idea-btn" id="quickIdeaBtn" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-idea"/></svg>
+        Capture a stray idea
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  
+  <main class="main">
+
+    <!-- List view -->
+    <section id="listView" class="list-view">
+      <header class="topbar">
+        <button class="btn-icon menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24"><use href="#icon-menu"/></svg>
+        </button>
+        <div class="view-title">
+          <h1 id="viewTitle">All works</h1>
+          <p id="viewSub">0 pieces in the room</p>
+        </div>
+        <label class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-search"/></svg>
+          <input type="search" id="searchInput" placeholder="Search titles, lyrics, tags" autocomplete="off" aria-label="Search works">
+        </label>
+        <button class="btn btn-primary" id="newWorkBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-plus"/></svg>
+          New work
+        </button>
+      </header>
+
+      <!-- Phone-friendly quick filters (hidden on desktop) -->
+      <div class="chips" id="chips" role="tablist" aria-label="Filter by type">
+        <button class="chip active" type="button" data-filter="all">All <span data-count="all">0</span></button>
+        <button class="chip" type="button" data-filter="song">Lyrics <span data-count="song">0</span></button>
+        <button class="chip" type="button" data-filter="beat">Beats <span data-count="beat">0</span></button>
+        <button class="chip" type="button" data-filter="cover">Art <span data-count="cover">0</span></button>
+        <button class="chip" type="button" data-filter="idea">Ideas <span data-count="idea">0</span></button>
+        <button class="chip" type="button" data-filter="trash">Trash <span data-count="trash">0</span></button>
+      </div>
+
+      <div class="content" id="content">
+        <div id="listHead" class="list-head" aria-hidden="true">
+          <div>Title</div><div>Type</div><div>Status</div><div>Updated</div><div></div>
+        </div>
+        <div id="workList"></div>
+        <div id="emptyState" class="empty" hidden>
+          <svg width="48" height="48" viewBox="0 0 24 24"><use href="#icon-empty"/></svg>
+          <h3 id="emptyTitle">The room is quiet</h3>
+          <p id="emptyText">Nothing here yet. Start a lyric sheet, drop in a beat idea, or stash some cover art before it slips your mind.</p>
+          <button class="btn btn-primary" id="emptyNewBtn" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-plus"/></svg>
+            Start something
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workspace (detail) view -->
+    
+    <section id="workspace" class="workspace" hidden>
+      <header class="work-topbar">
+        <button class="back-btn" id="backBtn" type="button" aria-label="Back to library">
+          <svg width="20" height="20" viewBox="0 0 24 24"><use href="#icon-back"/></svg>
+          <span class="btn-label">Back</span>
+        </button>
+        <input type="text" id="titleInput" class="title-input" placeholder="Untitled" aria-label="Title" enterkeyhint="done">
+        <div class="save-state" aria-live="polite">
+          <span class="save-dot saved" id="saveDot"></span>
+          <span class="save-text" id="saveText">All changes saved</span>
+        </div>
+        <button class="btn btn-ghost" id="restoreWorkBtn" type="button" hidden>
+          <svg width="15" height="15" viewBox="0 0 24 24"><use href="#icon-history"/></svg>
+          <span class="btn-label">Restore</span>
+        </button>
+        <button class="btn btn-ghost btn-compact" id="exportBtn" type="button" aria-label="Export as text file">
+          <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-download"/></svg>
+          <span class="btn-label">Export</span>
+        </button>
+        <button class="btn-icon" id="deleteWorkBtn" type="button" title="Move to trash" aria-label="Move to trash">
+          <svg width="18" height="18" viewBox="0 0 24 24"><use href="#icon-trash"/></svg>
+        </button>
+      </header>
+
+      <!-- Phone / tablet: switch between writing and details -->
+      
+      <div class="ws-tabs" id="wsTabs" role="tablist">
+        <button class="ws-tab active" type="button" role="tab" data-tab="write" aria-selected="true">Write</button>
+        <button class="ws-tab" type="button" role="tab" data-tab="details" aria-selected="false">Audio and details</button>
+      </div>
+
+      <div class="workspace-body" id="workspaceBody" data-tab="write">
+        <div class="sheet-wrap" id="sheetWrap">
+          <div class="sheet">
+            <div class="sheet-meta">
+              <span id="sheetType">SONG / LYRICS</span>
+              <span id="sheetWords">0 words</span>
+            </div>
+            <textarea id="lyricsArea" class="lyrics-area" placeholder="Write it before it goes. Verse, hook, a stray line. None of it has to be finished here." aria-label="Lyrics and notes"></textarea>
+          </div>
+        </div>
+
+        <aside class="meta-rail" id="metaRail">
+
+          <div class="meta-section">
+            <div class="meta-label">AUDIO SKETCH</div>
+            <div id="audioSlot"></div>
+          </div>
+
+          <div class="meta-section">
+            <div class="meta-label">COVER ART</div>
+            <button class="cover-drop" id="coverDrop" type="button" aria-label="Add cover art"></button>
+            <div class="ap-actions cover-actions" id="coverActions" hidden>
+              <button class="ap-btn" type="button" data-cover="preview">
+                <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-expand"/></svg> Preview
+              </button>
+              <button class="ap-btn" type="button" data-cover="crop">
+                <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-crop"/></svg> Adjust crop
+              </button>
+              <button class="ap-btn" type="button" data-cover="replace">
+                <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-upload"/></svg> Replace
+              </button>
+              <button class="ap-btn danger" type="button" data-cover="remove">
+                <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-trash"/></svg> Remove
+              </button>
+            </div>
+            <div class="cover-note">Cover art is square. The usual standard for releases is 3000 x 3000 px.</div>
+          </div>
+
+          <div class="meta-section">
+            <div class="meta-label">DETAILS</div>
+            <div class="field-row">
+              <label for="typeSelect">Type</label>
+              <select id="typeSelect">
+                <option value="song">Song / Lyrics</option>
+                <option value="beat">Beat / Instrumental</option>
+                <option value="cover">Cover art piece</option>
+                <option value="idea">Idea / Fragment</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <label for="statusSelect">Status</label>
+              <select id="statusSelect">
+                <option value="sketch">Sketch</option>
+                <option value="progress">In progress</option>
+                <option value="mixing">Mixing / Refining</option>
+                <option value="final">Final take</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <label for="tagInput">Tags</label>
+              <input type="text" id="tagInput" class="text-field" placeholder="mood, genre, project, then Enter" enterkeyhint="done" autocomplete="off">
+              <div class="tag-list" id="tagList"></div>
+            </div>
+          </div>
+
+          <div class="meta-section">
+            <div class="meta-label">LOG</div>
+            <div class="stat-line"><span>Created</span><span id="statCreated">-</span></div>
+            <div class="stat-line"><span>Last updated</span><span id="statUpdated">-</span></div>
+            <div class="stat-line"><span>Word count</span><span id="statWords">0</span></div>
+          </div>
+
+          <div class="meta-section">
+            <div class="meta-label">TAKES <span class="meta-label-note">saved versions</span></div>
+            <div id="takesList"></div>
+            <div class="action-row">
+              <button class="btn btn-ghost" id="saveTakeBtn" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24"><use href="#icon-history"/></svg>
+                Save a take
+              </button>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Confirm dialog -->
+
+<div class="overlay" id="confirmOverlay" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div class="dialog">
+    <h3><svg width="20" height="20" viewBox="0 0 24 24"><use href="#icon-warn"/></svg> <span id="confirmTitle">Are you sure?</span></h3>
+    <p id="confirmText"></p>
+    <div class="dialog-actions">
+      <button class="btn btn-ghost" id="confirmCancel" type="button">Cancel</button>
+      <button class="btn btn-danger" id="confirmOk" type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- Quick idea dialog -->
+
+<div class="overlay" id="ideaOverlay" role="dialog" aria-modal="true" aria-labelledby="ideaTitle">
+  <div class="dialog idea-dialog">
+    <h3 class="idea-heading"><svg width="20" height="20" viewBox="0 0 24 24"><use href="#icon-idea"/></svg> <span id="ideaTitle">Stray idea</span></h3>
+    <p>One line or ten. It lands in Ideas as its own piece, ready to develop later.</p>
+    <textarea id="ideaText" placeholder="A hook, a title, a line that just came to you" aria-label="Your idea"></textarea>
+    <div class="dialog-actions">
+      <button class="btn btn-ghost" id="cancelIdeaBtn" type="button">Cancel</button>
+      <button class="btn btn-primary" id="saveIdeaBtn" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24"><use href="#icon-check"/></svg>
+        Save idea
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Crop cover art -->
+
+<div class="overlay" id="cropOverlay" role="dialog" aria-modal="true" aria-labelledby="cropTitle">
+  <div class="dialog crop-dialog">
+    <h3 class="crop-heading"><svg width="20" height="20" viewBox="0 0 24 24"><use href="#icon-crop"/></svg> <span id="cropTitle">Crop cover art</span></h3>
+    <div class="crop-body">
+      <p class="crop-help">Cover art is square. Drag the frame to choose what stays, or drag a corner to resize it. Everything outside the frame is cut away.</p>
+      <div class="crop-stage-wrap">
+        <div class="crop-stage" id="cropStage">
+          <img id="cropImg" alt="Image to crop" draggable="false">
+          <div class="crop-shade" aria-hidden="true"><div class="crop-hole" id="cropHole"></div></div>
+          <div class="crop-box" id="cropBox" tabindex="0" role="group" aria-label="Crop frame. Use the arrow keys to move it.">
+            <span class="crop-handle" data-h="nw"></span>
+            <span class="crop-handle" data-h="ne"></span>
+            <span class="crop-handle" data-h="sw"></span>
+            <span class="crop-handle" data-h="se"></span>
+          </div>
+        </div>
+      </div>
+      <label class="crop-size-row" for="cropSize">
+        <span>Frame size</span>
+        <input class="seek" id="cropSize" type="range" min="0" max="1000" step="1" value="1000">
+      </label>
+      <div class="crop-info">
+        <span class="crop-dims" id="cropDims">-</span>
+        <span class="crop-hint" id="cropHint"></span>
+      </div>
+    </div>
+    <div class="dialog-actions">
+      <button class="btn btn-ghost" id="cropCancel" type="button">Cancel</button>
+      <button class="btn btn-ghost" id="cropReset" type="button">Reset</button>
+      <button class="btn btn-primary" id="cropSave" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-check"/></svg>
+        Save cover
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Full-size cover preview -->
+
+<div class="overlay preview-overlay" id="previewOverlay" role="dialog" aria-modal="true" aria-label="Cover art preview">
+  <div class="preview-wrap">
+    <div class="preview-frame"><img id="previewImg" alt="Cover art, full square"></div>
+    <div class="preview-bar">
+      <span class="preview-dims" id="previewDims"></span>
+      <span class="preview-actions">
+        <a class="btn btn-ghost" id="previewDownload" href="#" download>
+          <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-download"/></svg> Download
+        </a>
+        <button class="btn btn-primary" id="previewClose" type="button">Close</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg width="16" height="16" viewBox="0 0 24 24"><use href="#icon-check"/></svg>
+  <span id="toastText">Saved</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
