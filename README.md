@@ -26,9 +26,9 @@ Everything is stored in your browser (localStorage and IndexedDB). There is no s
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ---
 
-## 📝
-Made with ❤️ as a frontend practice project.
-
 ## License
 
 MIT
+
+## 📝
+Made with ❤️ as a frontend practice project.
